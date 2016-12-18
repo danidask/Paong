@@ -2,19 +2,20 @@ class Bubble {
   float x;
   float y;
   boolean dirX;
-  boolean dirY = false;
+  boolean dirY;
   int radious;
-  float speed = 0;
+  float speed;
   float acceleration = 0;
   int maxspeed;
   float horizontalspeed = 1;
   int bbsize;
 
   Bubble(float startX, float startY, boolean startdirX, int startsize, boolean startstage) {
+    bbsize = startsize;
     x = startX;
     y = startY;
     dirX = startdirX;
-    bbsize = startsize;
+    dirY = false;
     if (startstage) speed = 0;
     else speed = 3;
     radious = 8 * startsize;
