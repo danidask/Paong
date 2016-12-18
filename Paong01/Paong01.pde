@@ -7,7 +7,7 @@ Bubble actualbubble;
 
 void setup() {
   size(640, 480);
-  frameRate(10);
+  frameRate(30);
   bubbles.add(new Bubble(200, height-400, false));
   bubbles.add(new Bubble(300, height-400, true));
 }
