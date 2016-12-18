@@ -1,9 +1,9 @@
 class Bubble {
   float x;
   float y;
-  boolean dirx;
-  boolean diry;
-  int diameter;
+  boolean dirX;
+  boolean dirY;
+  int radious;
   float speed = 0;
   float acceleration = 0;
   int maxspeed = 8;
@@ -12,51 +12,47 @@ class Bubble {
   Bubble(float startX, float startY, boolean startdirX) {
     x = startX;
     y = startY;
-    dirx = startdirX;
-    diry = true;
-    diameter = 25;
+    dirX = startdirX;
+    dirY = true;
+    radious = 12;
   }
 
   void move() {
     speedchange();
-    if (dirx) x+=horizontalspeed;
+    if (dirX) x+=horizontalspeed;
     else x-=horizontalspeed;
-    if (diry) y += speed;
+    if (dirY) y += speed;
     else y-=speed;
-
     checkboundaries();
   }
 
   void show() {
-    //stroke(0);
     fill(0, 255, 0);
     strokeWeight(0);
-    //rectMode(CORNERS);
-    ellipse(x, y, diameter, diameter);
+    ellipseMode(RADIUS);
+    ellipse(x, y, radious, radious);
   }
   
-
   void speedchange() {
     acceleration += 0.01;
-    if (diry && speed < maxspeed) { // baja    
+    if (dirY && speed < maxspeed) {  
       speed += acceleration;
     }
-    else if (!diry) { // baja  
+    else if (!dirY) {  
       speed -= acceleration;
     }
     if (speed < 0) {
       speed = 0;
       acceleration = 0;
-      diry=true;
+      dirY=true;
     }
   }
 
-
   void checkboundaries() {
-    if (!dirx && x < diameter/2) dirx = true;
-    else if (dirx && x > width-(diameter/2)) dirx = false;
-    if (diry && y > height-(diameter/2)) {
-      diry = false;
+    if (!dirX && x < radious) dirX = true;
+    else if (dirX && x > width - radious) dirX = false;
+    if (dirY && y > height - radious) {
+      dirY = false;
       acceleration = 0;
     }
   }
