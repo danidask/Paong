@@ -17,7 +17,7 @@ Hook hook;
 
 void setup() {
   size(640, 480);
-  frameRate(30);
+  //frameRate(30);
   bubbles.add(new Bubble(100, height-400, false, 3, true));
   bubbles.add(new Bubble(200, height-400, false, 4, true));
   bubbles.add(new Bubble(width/2, height-400, false, 5, true));
