@@ -14,7 +14,9 @@ class Player {
     fill(204, 102, 0);
     strokeWeight(0);
     rect(x, y, plsize, plsize*2);
-    //ellipse(x, y-(plsize/2), plsize/2, plsize/2); //real hittable area
+    stroke(0);
+    strokeWeight(1);
+    ellipse(x, y-(plsize/2), plsize/3, plsize/3); //real hittable area
   }
   void move(int dirX) {
     if (dirX>0 && x < width-(plsize/2)) x += speed;
