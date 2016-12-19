@@ -11,14 +11,14 @@ class Bubble {
   int bbsize;
   color bbcolor = color (0, 255, 0);
 
-  Bubble(float startX, float startY, boolean startdirX, int startsize, boolean startstage) {
+  Bubble(float startX, float startY, boolean startdirX, int startsize, boolean frombreaking) {
     bbsize = startsize;
     x = startX;
     y = startY;
     dirX = startdirX;
     dirY = false;
-    if (startstage) speed = 0;
-    else speed = 3;
+    if (frombreaking) speed = 3;
+    else speed = 0;
     radious = 8 * startsize;
     maxspeed = ((4 * startsize) /3) + 6;
   }
